@@ -62,14 +62,15 @@ const PricingPrice = styled.div`
   font-weight: bold;
   text-align: center;
   margin: 1rem 0;
-  background: ${props => props.theme.colors.primary};
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: ${props => props.featured ? props.theme.colors.light : 'transparent'};
+  background: ${props => props.featured ? 'none' : props.theme.colors.primary};
+  -webkit-background-clip: ${props => props.featured ? 'unset' : 'text'};
+  -webkit-text-fill-color: ${props => props.featured ? props.theme.colors.light : 'transparent'};
+  background-clip: ${props => props.featured ? 'unset' : 'text'};
   
   span {
     font-size: 1rem;
-    color: ${props => props.theme.colors.textDark};
+    color: ${props => props.featured ? props.theme.colors.light : props.theme.colors.textDark};
   }
 `;
 
@@ -121,7 +122,7 @@ const Pricing = () => {
             >
               <PricingPlan>{plan.name}</PricingPlan>
               <PricingDescription>{plan.description}</PricingDescription>
-              <PricingPrice>
+              <PricingPrice featured={plan.featured}>
                 {plan.currency}{plan.price}
                 <span>/{plan.period}</span>
               </PricingPrice>

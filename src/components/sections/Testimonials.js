@@ -57,14 +57,14 @@ const TestimonialText = styled.p`
   
   &::before {
     content: '"';
-    font-size: 2rem;
+    font-size: 3rem;
     color: ${props => props.theme.colors.accent};
     margin-right: 0.5rem;
   }
   
   &::after {
     content: '"';
-    font-size: 2rem;
+    font-size: 3rem;
     color: ${props => props.theme.colors.accent};
     margin-left: 0.5rem;
   }
@@ -80,13 +80,20 @@ const AuthorAvatar = styled.div`
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  background: ${props => props.theme.colors.primary};
+  background: ${props => props.hasImage ? 'transparent' : props.theme.colors.primary};
   display: flex;
   align-items: center;
   justify-content: center;
   font-weight: bold;
   font-size: 1.2rem;
   color: ${props => props.theme.colors.light};
+  overflow: hidden;
+  
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
 `;
 
 const AuthorInfo = styled.div``;
@@ -137,7 +144,13 @@ const Testimonials = () => {
               </Stars>
               <TestimonialText>{testimonial.text}</TestimonialText>
               <TestimonialAuthor>
-                <AuthorAvatar>{testimonial.avatar}</AuthorAvatar>
+                <AuthorAvatar hasImage={testimonial.image}>
+                  {testimonial.image ? (
+                    <img src={testimonial.image} alt={testimonial.author} />
+                  ) : (
+                    testimonial.avatar
+                  )}
+                </AuthorAvatar>
                 <AuthorInfo>
                   <AuthorName>{testimonial.author}</AuthorName>
                   <AuthorRole>

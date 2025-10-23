@@ -121,6 +121,7 @@ export const TESTIMONIALS = [
     role: 'CEO',
     company: 'TechStart',
     avatar: 'MG',
+    image: "/testimonials-maria-garcia.jpeg", // ruta de la imagen: '/testimonials/maria-garcia.jpg'
     rating: 5,
   },
   {
@@ -130,6 +131,7 @@ export const TESTIMONIALS = [
     role: 'CTO',
     company: 'InnovateLab',
     avatar: 'CR',
+    image: "/testimonials-carlos-rodriguez.jpg", // ruta de la imagen: '/testimonials/carlos-rodriguez.jpg'
     rating: 5,
   },
   {
@@ -139,22 +141,22 @@ export const TESTIMONIALS = [
     role: 'Directora',
     company: 'DigitalFlow',
     avatar: 'AM',
+    image: "/testimonials-ana-martinez.jpg", // ruta de la imagen: '/testimonials/ana-martinez.jpg'
     rating: 5,
   },
 ];
 
 export const SOCIAL_LINKS = [
-  { id: 'facebook', icon: 'facebook', url: 'https://facebook.com' },
-  { id: 'twitter', icon: 'twitter', url: 'https://twitter.com' },
-  { id: 'linkedin', icon: 'linkedin', url: 'https://linkedin.com' },
-  { id: 'github', icon: 'github', url: 'https://github.com' },
+  { id: 'instagram', icon: 'instagram', url: 'https://www.instagram.com/pixyn.studio' },
+  { id: 'linkedin', icon: 'linkedin', url: 'https://www.linkedin.com/in/luis-fernando-torres-ruiz-44ab8b25a/' },
+  { id: 'github', icon: 'github', url: 'https://github.com/FerNyXnX' },
 ];
 
 export const COMPANY_INFO = {
-  name: 'DevSaaS Pro',
+  name: 'Pixyn Studio',
   tagline: 'Transformamos Ideas en Software Excepcional',
-  email: 'info@devsaaspro.com',
+  email: 'pixynstudio@gmail.com',
   phone: '+52 123 456 7890',
   address: 'Ciudad de México, México',
-  year: 2024,
+  year: 2025,
 };

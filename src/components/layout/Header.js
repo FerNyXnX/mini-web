@@ -33,14 +33,15 @@ const Nav = styled.nav`
 `;
 
 const Logo = styled.a`
-  font-size: 1.5rem;
-  font-weight: bold;
-  background: ${props => props.theme.colors.primary};
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
   cursor: pointer;
   z-index: 1001;
+  display: flex;
+  align-items: center;
+  
+  img {
+    height: 52px;
+    width: auto;
+  }
 `;
 
 const NavMenu = styled.ul`
@@ -144,7 +145,9 @@ const Header = () => {
     <>
       <HeaderContainer scrolled={scrolled}>
         <Nav>
-          <Logo onClick={() => handleNavClick('home')}>Pixyn</Logo>
+          <Logo onClick={() => handleNavClick('home')}>
+            <img src="/pixyn.svg" alt="Pixyn Studio Logo" />
+          </Logo>
           
           <NavMenu isOpen={menuOpen}>
             {NAVIGATION_ITEMS.map((item) => (

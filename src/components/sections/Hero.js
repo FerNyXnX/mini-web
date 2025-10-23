@@ -97,12 +97,21 @@ const HeroImage = styled(motion.div)`
 `;
 
 const FloatingCard = styled(motion.div)`
+  max-width: 70%;
   background: ${props => props.theme.colors.card};
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 20px;
   padding: 2rem;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  
+  img {
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    display: block;
+  }
 `;
 
 const Stats = styled.div`
@@ -202,9 +211,8 @@ const Hero = () => {
               transition={{ type: "spring", stiffness: 300 }}
             >
               <img 
-                src="data:image/svg+xml,%3Csvg width='400' height='300' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3ClinearGradient id='grad' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23667eea;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%23764ba2;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='400' height='300' fill='url(%23grad)' rx='20'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dy='.3em' fill='white' font-size='24' font-family='Arial'%3EInnovación Digital%3C/text%3E%3C/svg%3E"
+                src="/Innovación-digital-iphone14.png"
                 alt="Innovación Digital"
-                style={{ width: '100%', height: 'auto', borderRadius: '20px' }}
               />
             </FloatingCard>
           </HeroImage>

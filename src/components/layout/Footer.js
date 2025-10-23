@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { FiMail, FiPhone, FiMapPin, FiFacebook, FiTwitter, FiLinkedin, FiGithub } from 'react-icons/fi';
+import { FiMail, FiPhone, FiMapPin, FiInstagram, FiTwitter, FiLinkedin, FiGithub } from 'react-icons/fi';
 import { COMPANY_INFO, SOCIAL_LINKS } from '../../utils/constants';
 
 /**
@@ -28,13 +28,12 @@ const FooterContent = styled.div`
 const FooterSection = styled.div``;
 
 const Logo = styled.div`
-  font-size: 2rem;
-  font-weight: bold;
-  background: ${props => props.theme.colors.primary};
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
   margin-bottom: 1rem;
+  
+  img {
+    height: 60px;
+    width: auto;
+  }
 `;
 
 const FooterTitle = styled.h4`
@@ -107,7 +106,8 @@ const FooterBottom = styled.div`
 const Footer = () => {
   const getSocialIcon = (type) => {
     const icons = {
-      facebook: <FiFacebook />,
+      
+      instagram: <FiInstagram />,
       twitter: <FiTwitter />,
       linkedin: <FiLinkedin />,
       github: <FiGithub />,
@@ -119,7 +119,9 @@ const Footer = () => {
     <FooterContainer>
       <FooterContent>
         <FooterSection>
-          <Logo>{COMPANY_INFO.name}</Logo>
+          <Logo>
+            <img src="/pixyn-logo.svg" alt={COMPANY_INFO.name} />
+          </Logo>
           <FooterText>
             {COMPANY_INFO.tagline}
           </FooterText>
@@ -191,7 +193,7 @@ const Footer = () => {
       </FooterContent>
 
       <FooterBottom>
-        <p>© {COMPANY_INFO.year} {COMPANY_INFO.name}. Todos los derechos reservados.</p>
+        <p>© Construido por Pixyn Studio.</p>
       </FooterBottom>
     </FooterContainer>
   );
